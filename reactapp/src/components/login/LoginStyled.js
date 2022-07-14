@@ -24,13 +24,13 @@ const LoginStyled = styled.form`
   h2 {
     color: red;
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
   .input-box {
     position: relative;
     margin-bottom: 1rem;
     input {
-      padding: 1rem;
+      padding: 1rem 2.5rem;
       color: #fff;
       font-size: 1.5rem;
       outline: none;
@@ -81,6 +81,12 @@ const LoginStyled = styled.form`
       border: 2px solid ${({ theme }) => theme.colors.primary};
       color: ${({ theme }) => theme.colors.primary};
     }
+  }
+  a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: ${({ theme }) => theme.colors.greenColor};
+    margin-left: -140px;
   }
 `;
 

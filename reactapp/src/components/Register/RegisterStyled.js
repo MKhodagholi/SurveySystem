@@ -30,7 +30,7 @@ const RegisterStyled = styled.form`
     position: relative;
     margin-bottom: 1rem;
     input {
-      padding: 1rem;
+      padding: 1rem 2.5rem;
       color: #fff;
       font-size: 1.5rem;
       outline: none;
@@ -105,6 +105,12 @@ const RegisterStyled = styled.form`
       border: 2px solid ${({ theme }) => theme.colors.grayColor};
       color: ${({ theme }) => theme.colors.grayColor};
     }
+  }
+  a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-left: -125px;
+    color: ${({ theme }) => theme.colors.greenColor};
   }
 `;
 

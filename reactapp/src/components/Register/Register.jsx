@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import RegisterStyled from "./RegisterStyled";
 
@@ -136,6 +137,7 @@ const Register = () => {
         />
         <span>Confirm Password</span>
       </div>
+      <Link to="/login">Have Account?</Link>
       <button disabled={!success ? true : false} onClick={handleSumbit}>
         Login
       </button>

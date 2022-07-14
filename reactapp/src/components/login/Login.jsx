@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import LoginStyled from "./LoginStyled";
 
+import { Link } from "react-router-dom";
+
 const Login = () => {
   const [isColor, setIsColor] = useState(false);
   const toggle = () => {
@@ -101,6 +103,7 @@ const Login = () => {
         <span>Password</span>
       </div>
       <h2 className="error">{formIsValid.error.password}</h2>
+      <Link to="/register">No Account?</Link>
       <button
         className={!hasError(username, password) ? "isOk" : ""}
         onClick={loginHandler}
