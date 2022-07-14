@@ -6,6 +6,7 @@ import Login from "./components/login/Login";
 import Register from "./components/Register/Register";
 import GlobalStyled from "./GlobalStyled";
 import Menu from "./components/menu/Menu";
+import Home from "./pages/Home/Home";
 // import Home from "./components/Home/Home";
 
 const theme = {
@@ -25,6 +26,7 @@ const App = () => {
         <GlobalStyled />
         <Menu />
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
         </Routes>
