@@ -18,8 +18,11 @@ const RegisterStyled = styled.form`
     color: ${({ theme }) => theme.colors.grayColor};
     transition: 0.5s;
   }
-  h1.color {
-    color: ${({ theme }) => theme.colors.primary};
+  h1.correct {
+    color: ${({ theme }) => theme.colors.greenColor};
+  }
+  h1.wrong {
+    color: ${({ theme }) => theme.colors.redColor};
   }
   h2 {
     color: red;
@@ -111,6 +114,22 @@ const RegisterStyled = styled.form`
     font-size: 1.5rem;
     margin-left: -125px;
     color: ${({ theme }) => theme.colors.greenColor};
+  }
+  .err {
+    direction: rtl;
+    margin: 1rem;
+    color: ${({ theme }) => theme.colors.yellowColor};
+    font-family: "Noto";
+    margin-right: -7rem;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    span {
+      color: ${({ theme }) => theme.colors.redColor};
+    }
+    &:first-of-type {
+      margin-right: 0;
+    }
   }
 `;
 
