@@ -9,7 +9,7 @@ const Home = () => {
     <HomeStyled>
       <div className="links">
         <Link to="/register">ثبت نام</Link>
-        <Link to="/register">ورود</Link>
+        <Link to="/login">ورود</Link>
       </div>
       <div className="descriptions">
         <h1>به سیستم ساخت نظرسنجی خوارزمی خوش آمدید</h1>
