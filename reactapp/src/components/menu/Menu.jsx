@@ -6,19 +6,21 @@ import { VscAccount } from "react-icons/vsc";
 import { AiFillAppstore, AiFillAlert } from "react-icons/ai";
 
 const Menu = ({ userXLoggined }) => {
-  const userIsLogin = userXLoggined !== null ? true : false;
-  const id = userXLoggined !== null ? +userXLoggined : 0;
-  console.log(userXLoggined);
-  const [active, setIsActive] = useState(null);
+  const [active, setIsActive] = useState(2);
+  const location = useLocation();
+  const pathname = location.pathname;
+  const id = pathname[pathname.length - 1];
+  const userIsLogin = pathname.includes("user");
   return (
     userIsLogin && (
       <MenuStyled>
         <ul>
           <li>
             <Link
-              className={active === 1 ? "active" : ""}
+              className={`${active === 1 ? "active" : ""} disable`}
               to={`user/${id}/profile`}
               onClick={() => setIsActive(1)}
+              dis
             >
               <VscAccount />
             </Link>

@@ -39,6 +39,9 @@ const MenuStyled = styled.div`
         font-size: 2rem;
         padding: 1rem;
         transition: all 0.5s ease;
+        &.disable {
+          pointer-events: none;
+        }
         &:not(.active):hover {
           background-color: ${({ theme }) => theme.colors.yellowColor};
           color: ${({ theme }) => theme.colors.redColor};
