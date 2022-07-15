@@ -3,7 +3,7 @@ import LoginStyled from "./LoginStyled";
 
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ userXLoginnedChanged }) => {
   const [isColor, setIsColor] = useState(false);
   const toggle = () => {
     setIsColor((prev) => !prev);
@@ -77,6 +77,7 @@ const Login = () => {
   const loginHandler = (e) => {
     e.preventDefault();
     if (!hasError(username, password)) console.log(formIsValid);
+    userXLoginnedChanged(1);
   };
 
   return (

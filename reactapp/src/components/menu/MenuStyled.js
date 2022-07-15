@@ -22,7 +22,10 @@ const MenuStyled = styled.div`
     li {
       /* width: 100%; */
       flex-grow: 2;
-      border-bottom: 1px solid ${({ theme }) => theme.colors.yellowColor};
+      /* border-bottom: 1px solid ${({ theme }) => theme.colors.yellowColor}; */
+      &:last-of-type {
+        border-bottom: none;
+      }
       a {
         text-align: center;
         width: 100%;
@@ -54,6 +57,7 @@ const MenuStyled = styled.div`
       transform: translateY(-50%);
       border-radius: 20px 0 0 20px;
       border-right: 0;
+      border-bottom: 1px solid ${({ theme }) => theme.colors.yellowColor};
     }
   }
 `;
