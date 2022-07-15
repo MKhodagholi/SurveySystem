@@ -20,6 +20,23 @@ const SurveyQuestionStyled = styled.div`
   .question-tashrihi {
     display: flex;
     flex-direction: column;
+    .question {
+      display: flex;
+      align-items: flex-start;
+      width: 100%;
+      margin-bottom: 1rem;
+      span {
+        margin-left: 10px;
+        font-family: "Noto";
+      }
+      input {
+        width: 80%;
+        font-size: 2rem;
+        font-family: "Noto";
+        padding-right: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+    }
   }
   .question-testi {
     display: flex;

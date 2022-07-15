@@ -6,7 +6,10 @@ const SurveyQuestion = ({ number, type }) => {
     <SurveyQuestionStyled>
       {type === "tashrihi" ? (
         <div className="question-tashrihi">
-          <input type="text" />
+          <div className="question">
+            <span>سوال {number}:</span>
+            <input type="text" />
+          </div>
         </div>
       ) : (
         <div className="question-testi">
