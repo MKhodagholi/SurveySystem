@@ -9,7 +9,8 @@ const Menu = ({ userXLoggined }) => {
   const [active, setIsActive] = useState(2);
   const location = useLocation();
   const pathname = location.pathname;
-  const id = pathname[pathname.length - 1];
+  const parts = pathname.split("/", 3);
+  const id = parts[2];
   const userIsLogin = pathname.includes("user");
   return (
     userIsLogin && (
@@ -20,7 +21,6 @@ const Menu = ({ userXLoggined }) => {
               className={`${active === 1 ? "active" : ""} disable`}
               to={`user/${id}/profile`}
               onClick={() => setIsActive(1)}
-              dis
             >
               <VscAccount />
             </Link>
