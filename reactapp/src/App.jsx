@@ -8,6 +8,8 @@ import GlobalStyled from "./GlobalStyled";
 import Menu from "./components/menu/Menu";
 import Home from "./pages/Home/Home";
 import User from "./pages/User/User";
+import CreateSurvey from "./pages/CreateSurvey/CreateSurvey";
+import NotFound from "./pages/NotFound/NotFound";
 // import Home from "./components/Home/Home";
 
 const theme = {
@@ -37,6 +39,8 @@ const App = () => {
             userXLoginnedChanged={setUserXLoginned}
           />
           <Route path="/user/:id" element={<User />} />
+          <Route path="/user/:id/create-survey" element={<CreateSurvey />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </AppStyled>
     </ThemeProvider>
