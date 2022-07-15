@@ -1,13 +1,27 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import LoginStyled from "./LoginStyled";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import axios from "axios";
 
 const Login = ({ userXLoginnedChanged }) => {
   const [isColor, setIsColor] = useState(false);
   const toggle = () => {
     setIsColor((prev) => !prev);
   };
+
+  const userRef = useRef(null);
+  const [userArray, setUserArray] = useState([]);
+  const [err, setErr] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    userRef.current.focus();
+    axios.get("http://localhost:8000/users").then((res) => {
+      setUserArray(res.data);
+    });
+  }, []);
 
   const [formIsValid, setFormIsValid] = useState({
     username: false,
@@ -76,8 +90,21 @@ const Login = ({ userXLoginnedChanged }) => {
 
   const loginHandler = (e) => {
     e.preventDefault();
-    if (!hasError(username, password)) console.log(formIsValid);
-    userXLoginnedChanged(1);
+    const username = formIsValid.username;
+    const password = formIsValid.password;
+    // if (hasError(username, password)) return;
+    const userIndex = userArray.findIndex((user) => {
+      console.log(user.username, user.password, username, password);
+      return user.username === username && user.password === password;
+    });
+    console.log(userIndex);
+    if (userIndex === -1) {
+      setErr("همچین اکانتی وجود ندارد");
+    } else {
+      setErr(null);
+      const userId = userArray[userIndex - 1].id;
+      navigate(`/user/${userId}`);
+    }
   };
 
   return (
@@ -90,6 +117,7 @@ const Login = ({ userXLoginnedChanged }) => {
           onFocus={toggle}
           onBlur={toggle}
           onChange={usernameChangeHandler}
+          ref={userRef}
         />
         <span>Username</span>
       </div>
