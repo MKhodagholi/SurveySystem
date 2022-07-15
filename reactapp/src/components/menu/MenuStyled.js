@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const MenuStyled = styled.div`
   ul {
+    z-index: 5;
     list-style: none;
     direction: rtl;
     position: fixed;
