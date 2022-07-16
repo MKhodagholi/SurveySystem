@@ -27,7 +27,8 @@ const CreateSurveyStyled = styled.div`
       input {
         background-color: transparent;
         color: ${({ theme }) => theme.colors.primary};
-        border: none;
+        border-radius: 4px;
+        border: 1px solid ${({ theme }) => theme.colors.primary};
         outline: none;
         font-size: 1.5rem;
         width: 100px;
@@ -59,6 +60,9 @@ const CreateSurveyStyled = styled.div`
     font-family: "Noto";
     border-radius: 4px;
     cursor: pointer;
+    &.add-survey {
+      margin-bottom: 2rem;
+    }
   }
   @media screen and (min-width: 768px) {
     width: 60%;

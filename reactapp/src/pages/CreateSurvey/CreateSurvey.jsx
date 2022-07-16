@@ -3,6 +3,8 @@ import SurveyForm from "../../components/SurveyForm/SurveyForm";
 
 import CreateSurveyStyled from "./CreateSurveyStyled";
 
+import axios from "axios";
+
 const CreateSurvey = () => {
   const [surveyInformation, setSurveyInformation] = useState({
     number: null,
@@ -27,7 +29,7 @@ const CreateSurvey = () => {
       <div className="questions">
         <div className="question">
           <label>چه تعداد سوال نیاز دارید</label>
-          <input type="number" ref={refInputNumber} />
+          <input type="number" ref={refInputNumber} min="1" />
         </div>
         <div className="question">
           <label>نوع سوال ها چگونه باشد</label>
